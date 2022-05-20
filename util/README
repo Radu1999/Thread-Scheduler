@@ -1,0 +1,37 @@
+Nume: Chivereanu Radu-Gabriel
+Grupă: 335CA
+
+# Tema 4
+
+Organizare
+-
+1. Tema implementeaza o simulare de threaduri user space.
+
+* Se foloseste algoritmul round robin cu prioritati: In spate este implementata o structura de heap.
+* Consider implementarea ca fiind eficienta.
+
+
+Implementare
+-
+
+* Intregul enunt al temei este implementat.
+* O dificultate intampinata este ca heap-ul nu retine in ordinea inserarii theadurile cu aceeasi prioritate. Pentru a rezolva problema, am introdus birth_time (vechimea threadului) ca conditie auxiliara de comparare.
+* Am folosit tot heap si pentru a retine threadurile care asteapta pe un eveniment din cauza ca 
+mi-a fost mai usor. Mai eficienta era o coada simpla. (Pentru fiecare eveniment am un priority_queue)
+* Heap-ul este retinut sub forma de array.
+* Pentru blocarea thread-urilor din kernel space am folosit semafoare.
+* Am retinut toate thread-urile create intr-un array pentru a putea face join.
+
+
+Cum se compilează și cum se rulează?
+-
+* make pentru compilare biblioteca si make -f Makefile.checker pentru rulare checker
+
+Bibliografie
+-
+
+* https://www.programiz.com/dsa/priority-queue -> Pentru implementarea heap-ului. Am modificat codul, intrucat era ineficient (facea heapify de prea multe ori).
+
+Git
+-
+1. Link către repo-ul de git
